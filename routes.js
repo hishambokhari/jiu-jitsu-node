@@ -1,15 +1,19 @@
+const express = require('express');
+const app = express();
 
-
+const data = ['leg locks','front headlocks','back attacks']; 
 
 module.exports = (app)=>{
 
   app.get('/',(req,res)=>{
-    res.sendFile(__dirname + '/index.html')
+    res.render('home',{systems:data})
   })
-  
+
   app.get('/about',(req,res)=>{
-    res.send('This is the about page')
+    res.render('about')
   })
+
+
 }
 
 
