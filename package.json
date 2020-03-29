@@ -1,0 +1,23 @@
+{
+  "name": "jiu-jitsu-node",
+  "version": "1.0.0",
+  "description": "jiu-jitsu app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hishambokhari/jiu-jitsu-node.git"
+  },
+  "author": "hisham bokhari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hishambokhari/jiu-jitsu-node/issues"
+  },
+  "homepage": "https://github.com/hishambokhari/jiu-jitsu-node#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}
