@@ -9,10 +9,38 @@
 <body>
   <%- include('partials/nav'); -%>
   <h1>Wrestling Mindset</h1>
+  <form id="myForm">
+    <input type="text" name="item">
+    <button type="submit">add</button>
+  </form>
+
  <ul>
-   <li><%= systems[0] %></li>
-   <li><%= systems[1] %></li>
-   <li><%= systems[2] %></li>
+   <% systems.forEach(item=>{ %>
+      <li><%= item %></li>
+   <% }) %>
  </ul>
+
+<script>
+
+  document.getElementById("myForm").onsubmit =(e)=>{
+    e.preventDefault();
+    const url = "http://localhost:3000/sent";
+    var data = new URLSearchParams();
+    for(const pair of new FormData(e.target)){
+      data.append(pair[0],pair[1])
+    }
+    fetch(url,{
+      method:"post",
+      body:data,
+
+    }).then(res=>res.json())
+    .then(res2 => {
+      console.log(res2)
+      location.reload()
+    });
+  }
+
+</script>
+
 </body>
 </html>
